@@ -61,15 +61,15 @@ Recruitment Department
 
 The project integrates four datasets:
 
-Dataset	Raw rows × cols	                        Final rows × cols
+Dataset	Raw rows × cols	            |            Final rows × cols
 
-Player Profiles	92,671 × 34    	                92,671 × 20
+Player Profiles	92,671 × 34    	   |             92,671 × 20
 
-Player Performance	1,878,719 × 20	                 1,878,719 × 16
+Player Performance	1,878,719 × 20	    |             1,878,719 × 16
 
-Player Market Value	901,429 × 10	                 901,429 × 10
+Player Market Value	901,429 × 10	     |            901,429 × 10
 
-Transfer History	1,101,440 × 3	                     1,101,317 × 3
+Transfer History	1,101,440 × 3	        |             1,101,317 × 3
 
 The datasets from kaggle  provide complementary information covering player identity and characteristics, sporting output, financial valuation and historical transfer activity.
 
