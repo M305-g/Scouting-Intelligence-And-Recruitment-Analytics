@@ -4,7 +4,7 @@ A data-driven football scouting project integrating player performance, market v
 
 **Executive Summary**
 
-This project develops a data-driven scouting and recruitment framework designed to evaluate player sporting value alongside financial valuation and historical transfer characteristics. The analysis integrates player profiles, competition-level performance records, historical market valuations, and transfer history to move beyond simple performance rankings and provide a more objective basis for recruitment, retention, and squad investment decisions.
+I built a scouting and recruitment framework that weighs a player's sporting performance against their market value and transfer history — designed to give recruitment teams evidence to work from instead of gut feel or reputation. The analysis integrates player profiles, competition-level performance records, historical market valuations, and transfer history to move beyond simple performance rankings and provide a more objective basis for recruitment, retention, and squad investment decisions.
 
 Using Python, performance records were aggregated to the player-season level and aligned with the latest available market valuation within the relevant season. A composite Sporting Value Score was developed from key performance indicators, while market-value bands and performance bands were used to classify player value. The analysis identified substantial variation between sporting performance and market valuation, demonstrating that strong sporting output does not consistently translate into proportionally high market value. Spearman correlation confirmed a statistically significant positive association between sporting contribution and market valuation (ρ = 0.304, p < 0.001), but the relatively modest strength of the relationship indicates that market value is influenced by factors beyond sporting output alone.
 
@@ -183,7 +183,7 @@ The analysis identified substantial variation in sporting output, including exce
 
 Repeated high-performing player-seasons were also observed for some players across different seasons.
 
-Insight: Sporting value is multidimensional. Goals alone do not adequately represent player contribution, while repeated high performance suggests that consistency can also be relevant when assessing player value.
+Insight: This told me goals alone were a poor proxy for contribution — I needed to combine several indicators to get a fair read on a player's value."
 
 EDA 3 — Sporting Performance vs Market Value
 
@@ -267,6 +267,9 @@ Monitor: 72,655 — 42.53%
 Retain: 47,998 — 28.10%
 Recruit: 39,592 — 23.18%
 Transfer Review: 10,571 — 6.19%
+
+The Sporting Value Score was constructed from key player-performance indicators including goals, assists, appearances, and minutes played, with disciplinary variables considered separately rather than allowing cards to dominate the overall score. The indicators were normalized before being combined so that variables measured on different scales could contribute comparably to the final score. Greater weight was given to direct sporting contributions such as goals and assists, while appearances and minutes played captured player involvement and consistency. This weighting was selected to balance measurable on-pitch output with sustained participation, providing a practical performance-based measure for comparing players across the scouting dataset.
+
 
 Insight: Sporting value and market valuation are related but not interchangeable. The relatively modest correlation supports the use of a combined performance-financial framework for scouting decisions.
 
@@ -429,19 +432,40 @@ Historical player data also contain records from different competitions and foot
 Future development could incorporate:
 
 Age and career-stage analysis.
+
 Position-specific performance metrics.
+
 Competition-strength adjustment.
+
 More advanced scouting metrics.
+
 Injury and availability information.
+
 Contract status and remaining contract duration.
+
 Wage information.
+
 Team tactical context.
+
 Longitudinal player development.
+
 More advanced predictive modelling after strengthening the statistical foundation.
-19. Conclusion
+
+
+**Conclusion**
 
 This project demonstrates how player performance, market valuation and transfer history can be integrated into a practical scouting intelligence framework.
 
 The analysis confirms that sporting performance is positively associated with market valuation, but the relationship is not sufficiently strong to treat financial valuation as a direct proxy for sporting quality. The transfer analysis also shows statistically significant associations between transfer-fee categories and long-term recruitment success, while demonstrating that transfer characteristics alone provide limited explanatory power.
 
 The resulting framework therefore supports a more evidence-based approach to recruitment: evaluate sporting contribution, consider financial valuation, examine transfer context, and use the combined evidence to prioritize scouting decisions rather than relying on market value alone.
+
+Next, I want to bring team tactical context into this framework — looking at how a player's role, positioning, and output shift depending on the system and teammates around him, rather than judging performance in isolation. That would sharpen the sporting-value score and give recruitment teams a much fairer read on whether a player's numbers are a product of the player or the system.
+
+Mwanahamisi Juma
+
+Football Performance Analyst
+
++255787338398
+
+Mwanahamis050@gmail.com
