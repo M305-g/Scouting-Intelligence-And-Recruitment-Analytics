@@ -2,507 +2,409 @@
 
 A data-driven football scouting project integrating player performance, market valuation, and transfer history to identify high-value recruitment opportunities and support evidence-based decisions on player recruitment, retention, monitoring, and transfer review.
 
-**Executive Summary**
+## Executive Summary
 
-I built a scouting and recruitment framework that weighs a player's sporting performance against their market value and transfer history — designed to give recruitment teams evidence to work from instead of gut feel or reputation. The analysis integrates player profiles, competition-level performance records, historical market valuations, and transfer history to move beyond simple performance rankings and provide a more objective basis for recruitment, retention, and squad investment decisions.
+I built a scouting and recruitment framework that weighs a player's sporting performance against their market value and transfer history — designed to give recruitment teams evidence to work from instead of gut feel or reputation.
 
-Using Python, performance records were aggregated to the player-season level and aligned with the latest available market valuation within the relevant season. A composite Sporting Value Score was developed from key performance indicators, while market-value bands and performance bands were used to classify player value. The analysis identified substantial variation between sporting performance and market valuation, demonstrating that strong sporting output does not consistently translate into proportionally high market value. Spearman correlation confirmed a statistically significant positive association between sporting contribution and market valuation (ρ = 0.304, p < 0.001), but the relatively modest strength of the relationship indicates that market value is influenced by factors beyond sporting output alone.
+To do this, I integrated four sources: player profiles, competition-level performance records, historical market valuations, and transfer history. The goal was to move past simple performance rankings and give a more objective basis for recruitment, retention, and squad investment calls.
 
-For recruitment intelligence, the analysis further examined transfer characteristics and long-term recruitment outcomes. Statistical analysis confirmed that transfer type and transfer-fee category are associated with long-term success. Conventional transfers showed a statistically significant association with success compared with drafts, while transfer-fee groups between 1M and 10M demonstrated approximately three times the odds of long-term success compared with zero-fee transfers. However, the low model pseudo-R² (0.0115) indicates that transfer characteristics alone explain only a small proportion of the variation in long-term success.
+I aggregated performance records to the player-season level using Python, then aligned each player-season with the closest available market valuation. From there, I built a composite Sporting Value Score out of key performance indicators, and used market-value bands and performance bands to classify player value. What jumped out immediately was how much sporting performance and market valuation can diverge — strong on-pitch output doesn't reliably translate into a proportionally high market value. A Spearman correlation confirmed a statistically significant positive relationship between sporting contribution and market valuation (ρ = 0.304, p < 0.001), but the relationship is only moderate, which tells me market value is shaped by more than sporting output alone.
 
-The resulting scouting framework translates these findings into practical player classifications: Retain, Recruit, Monitor, and Transfer Review. Among the final actionable player-season records, 28.10% were classified as Retain, 23.18% as Recruit, 42.53% as Monitor, and 6.19% as Transfer Review. These classifications provide the sporting director and recruitment department with an evidence-based screening framework for identifying potential recruitment opportunities, protecting high-value sporting assets, and flagging players whose financial valuation may require further review.
+I also looked at transfer characteristics and how they relate to long-term recruitment success. Transfer type and transfer-fee category both showed a statistically significant association with success: conventional transfers stood out against drafts, and fees between 1M and 10M carried roughly three times the odds of long-term success compared with zero-fee transfers. That said, the model's pseudo-R² (0.0115) is low, which means transfer characteristics alone only explain a small slice of what drives long-term success.
 
-Overall, the project demonstrates how performance data, market valuation, and transfer history can be integrated into a practical scouting intelligence workflow, supporting recruitment decisions with quantitative evidence rather than relying solely on individual performance statistics or market price.
+I translated all of this into four practical classifications — Retain, Recruit, Monitor, and Transfer Review. Across the final actionable player-seasons, 28.10% landed in Retain, 23.18% in Recruit, 42.53% in Monitor, and 6.19% in Transfer Review. My aim was to give a sporting director and recruitment department an evidence-based screening tool: something that helps them spot recruitment opportunities, protect valuable players already on the books, and flag players whose price tag looks out of step with what they're actually producing on the pitch.
 
-**Impact of the Project**
+Overall, this project is my attempt at showing how performance data, market valuation, and transfer history can work together in one practical scouting workflow — backing recruitment decisions with evidence rather than raw stats or market price in isolation.
 
-This project turns four fragmented, multi-million-row datasets — player profiles, performance records, market valuations, and transfer history — into a single decision tool a recruitment department could actually use. Instead of ranking players on raw stats or reputation alone, the framework flags exactly where sporting output and market value disagree, and translates that gap into a clear call: Recruit, Retain, Monitor, or Transfer Review
+## Impact of the Project
 
-**What I Have Contributed to This Project**
+This project turns four fragmented, multi-million-row datasets — player profiles, performance records, market valuations, and transfer history — into a single decision tool a recruitment department could actually use. Instead of ranking players on raw stats or reputation alone, the framework flags exactly where sporting output and market value disagree, and translates that gap into a clear call: Recruit, Retain, Monitor, or Transfer Review.
 
-I contributed to the complete analytical workflow, including:
+Practically, this means:
 
-Data quality assessment and cleaning.
-Standardization of player, season and performance information.
-Player-season aggregation.
-Integration of performance, market-value and transfer information.
-Feature engineering for sporting value and market-value analysis.
-Exploratory data analysis.
-Statistical testing of relationships identified during EDA.
-Development of an objective scouting decision framework.
-Power BI dashboard development for communicating confirmed analytical findings.
-Translation of statistical results into recruitment-oriented insights and recommendations.
+- Spotting players whose sporting contribution is undervalued relative to their market price — the kind of signal a scouting department wants before a fee rises.
+  
+- Giving evidence, not just gut feel, for which transfer profiles (fee range, transfer type) have historically led to longer-term success.
+  
+- Producing a repeatable classification any analyst could re-run on a new season's data, rather than a one-off report.
 
+## What I Contributed to This Project
 
-**Project Objective**
+I worked across the whole analytical pipeline:
 
-To integrate player performance, market valuation and transfer history into a scouting intelligence framework that supports evidence-based recruitment, contract renewal and squad investment decisions.
+- Data quality assessment and cleaning
 
-**Research Questions**
+- Standardizing player, season, and performance information
+  
+- Player-season aggregation
+  
+- Integrating performance, market-value, and transfer data
+  
+- Feature engineering for the sporting-value and market-value analysis
+  
+- Exploratory data analysis
+  
+- Statistical testing of the relationships I found during EDA
+  
+- Building the scouting decision framework
+  
+- Developing the Power BI dashboards to communicate the confirmed findings
+  
+- Turning the statistical results into recruitment-oriented insights and recommendations
+
+## Project Objective
+
+To integrate player performance, market valuation, and transfer history into a scouting intelligence framework that supports evidence-based recruitment, contract renewal, and squad investment decisions.
+
+## Research Questions
+
+1. Which players provide the highest sporting value relative to their market valuation?
+
    
-Which players provide the highest sporting value relative to their market valuation?
-Which transfer characteristics are associated with successful long-term recruitment outcomes?
-Which players should be retained, recruited or transferred based on objective performance and financial evidence?
+2. Which transfer characteristics are associated with successful long-term recruitment outcomes?
 
-   **Stakeholders**
    
-Sporting Director
+3. Which players should be retained, recruited, or transferred based on objective performance and financial evidence?
 
-Recruitment Department
+## Stakeholders
 
+- Sporting Director
+  
+- Recruitment Department
 
-**Dataset Overview**
+## Dataset Overview
 
-The project integrates four datasets:
+I worked with four datasets from Kaggle, covering player identity and characteristics, sporting output, financial valuation, and historical transfer activity:
 
-Dataset	Raw rows × cols	            |            Final rows × cols
+| Dataset | Raw rows × cols | Final rows × cols |
+|---|---|---|
+| Player Profiles | 92,671 × 34 | 92,671 × 20 |
+| Player Performance | 1,878,719 × 20 | 1,878,719 × 16 |
+| Player Market Value | 901,429 × 10 | 901,429 × 10 |
+| Transfer History | 1,101,440 × 3 | 1,101,317 × 3 |
 
-Player Profiles	92,671 × 34    	   |             92,671 × 20
+## Tools & Technologies
 
-Player Performance	1,878,719 × 20	    |             1,878,719 × 16
+**Python** — data cleaning, integration across four datasets, player-season aggregation, feature engineering for the sporting-value score, exploratory data analysis, and statistical testing (Spearman correlation, logistic regression).
 
-Player Market Value	901,429 × 10	     |            901,429 × 10
+**Power BI** — interactive dashboards for sporting value vs. market value, recruitment/retention classifications, and transfer-market patterns, built for a sporting director and recruitment department audience.
 
-Transfer History	1,101,440 × 3	        |             1,101,317 × 3
+## Data Preparation & Cleaning
 
-The datasets from kaggle  provide complementary information covering player identity and characteristics, sporting output, financial valuation and historical transfer activity.
+### Player Profiles
 
-**Tools & Technologies**
+The original dataset had 92,671 rows and 34 columns. I worked through:
 
-Python — data cleaning, integration across four datasets, player-season aggregation, feature engineering for the sporting-value score, exploratory data analysis, and statistical testing (Spearman correlation, logistic regression).
+- Data-type assessment and correction
+  
+- Converting date fields (date of birth, joining information)
+  
+- Missing-value assessment
+  
+- Position standardization
+  
+- Creating a `position_group` field
+  
+- Foot standardization
+  
+- Citizenship assessment
+  
+- Current-club status classification
+  
+- Reviewing contract-related fields
+  
+- Removing non-essential columns I'd agreed weren't needed
 
-Power BI — interactive dashboards for sporting value vs. market value, recruitment/retention classifications, and transfer-market patterns, built for a sporting director and recruitment department audience
+The cleaned dataset kept all 92,671 rows, down to 20 columns.
 
+### Player Performance
 
-**Data Preparation & Cleaning**
+The original dataset had 1,878,719 rows and 20 columns. Here I handled:
 
-Player Profiles
+- Duplicate assessment
+  
+- Missing-value investigation
 
-The original Player Profiles dataset contained 92,671 rows and 34 columns.
+- Standardizing season names to YY/YY format
+  
+- Reviewing competition and team-level records
+  
+- Removing columns I didn't need
+  
+- Keeping the relevant performance and disciplinary variables
+  
+- Treating missing `goals` and `minutes_played` values
+  
+- Correcting invalid `goals_conceded = -1` entries to NaN
 
-Data preparation included:
+The cleaned dataset kept all 1,878,719 rows, down to 16 columns.
 
-Data-type assessment and correction.
+### Player Market Value
 
-Conversion of date fields such as date of birth and joining information.
+The original dataset had 901,429 rows and 10 columns. I prepared it for player-season market-value integration, including converting the valuation date into a usable date format. It stayed at 901,429 rows and 10 columns.
 
-Missing-value assessment.
+### Transfer History
 
-Position standardization.
+The original dataset had 1,101,440 rows and 3 columns. I found and removed 123 duplicate records, leaving a final dataset of 1,101,317 rows × 3 columns.
 
-Creation of position_group.
+## Data Integration
 
-Foot standardization.
+Player performance was originally recorded at the competition/team level, so I aggregated it up to the player-season level, which gave me 784,260 unique player-season records.
 
-Citizenship assessment.
+I aligned market valuations to these player-seasons using the latest available valuation on or before the end of each season. That gave me market-value data for 553,640 player-seasons, while 230,620 player-seasons had no available valuation.
 
-Current-club status classification.
+I then filtered the integrated dataset down to reliable performance and valuation information before building the sporting-value and scouting framework.
 
-Assessment of contract-related fields.
+Separately, I integrated the transfer data with performance data to look at how transfer characteristics relate to long-term recruitment outcomes.
 
-Removal of agreed non-essential columns.
+## Exploratory Data Analysis
 
-The final cleaned Player Profiles dataset contained 92,671 rows and 20 columns.
+### EDA 1 — Data Preparation & Understanding
 
-**Player Performance**
+The four datasets sit at different observation levels and cover different time spans, and player performance in particular had multiple records per player-season because of competition and team participation.
 
-The original Player Performance dataset contained 1,878,719 rows and 20 columns.
+After aggregation, I had 784,260 player-season records, and after aligning market valuation, 553,640 of those had valuation data attached.
 
-Data preparation included:
+This step made it clear to me that careful player-season aggregation and temporal alignment had to come first — there was no way to compare sporting performance with financial valuation honestly without it.
 
-Duplicate assessment.
+### EDA 2 — Sporting Performance
 
-Missing-value investigation.
+I represented player-season sporting performance through appearances, goals, assists, and minutes played.
 
-Standardization of season names to YY/YY.
+There was a lot of variation in output — some exceptionally high goal-and-assist contributions, with the highest combined figure hitting 102. I also noticed some players repeating high performances across multiple seasons, not just having one standout year.
 
-Assessment of competition and team-level records.
+This told me goals alone were a poor proxy for contribution — I needed to combine several indicators to get a fair read on a player's value.
 
-Removal of non-required columns.
+### EDA 3 — Sporting Performance vs Market Value
 
-Retention of relevant performance and disciplinary variables.
+High sporting output didn't map cleanly onto market value — I found player-seasons with very similar goal contributions sitting at markedly different valuations.
 
-Treatment of missing goals and minutes_played.
+A Spearman rank correlation confirmed a statistically significant positive relationship between sporting contribution and market valuation (ρ = 0.304, p < 0.001).
 
-Correction of invalid goals_conceded = -1 values to NaN.
+Higher output does tend to line up with higher valuation, but the relationship isn't strong enough for me to say sporting performance alone determines market value. This is exactly why I approached the first research question by assessing sporting value *relative to* financial valuation, rather than just ranking players by raw performance.
 
-The final cleaned Player Performance dataset contained 1,878,719 rows and 16 columns.
+### EDA 4 — Transfer Market Profile
 
-**Player Market Value**
+The Transfer History dataset breaks into four categories:
 
-The original Player Market Value dataset contained 901,429 rows and 10 columns.
+| Transfer type | Count |
+|---|---|
+| Transfer | 844,401 |
+| Loan | 128,079 |
+| Return from loan | 127,665 |
+| Draft | 1,172 |
 
-The dataset was assessed and prepared for player-season market-value integration, including conversion of the valuation date information into a usable date format.
+Transfer fees were heavily concentrated at zero — 1,061,320 records had a fee of zero — and the dataset spans 62 seasons, from 00/01 through 25/26.
 
-The final dataset retained 901,429 rows and 10 columns.
+This told me a transfer record on its own doesn't mean a paid transfer happened. I had to treat transfer type and transfer-fee status as two separate things when assessing recruitment outcomes, not one signal.
 
-**Transfer History**
+### EDA 5 — Transfer Characteristics & Long-Term Recruitment Success
 
-The original Transfer History dataset contained 1,101,440 rows and 3 columns.
+Long-term success rates varied clearly across transfer-fee groups:
 
-Duplicate assessment identified 123 duplicate records, which were removed.
+| Fee group | Long-term success |
+|---|---|
+| 0 fee | 8.02% |
+| 1M or below | 21.29% |
+| 1M–5M | 22.53% |
+| 5M–10M | 22.65% |
+| Above 10M | 18.03% |
 
-The final Transfer History dataset contained:
+And across transfer type:
 
-1,101,317 rows × 3 columns.
+| Transfer type | Long-term success |
+|---|---|
+| Transfer | 9.01% |
+| Return from loan | 7.07% |
+| Loan | 6.68% |
+| Draft | 5.63% |
 
-**Data Integration**
+Statistical testing confirmed both transfer type and transfer-fee category are associated with long-term recruitment success. Against the 0-fee reference group, every non-zero fee group showed a statistically significant association, with the 1–10M range carrying roughly three times the odds of success. For transfer type, conventional transfers stood out as significant against drafts, while loans and returns-from-loan weren't significant at the 0.05 level.
 
-Player performance records were initially recorded at competition/team level. These were aggregated to the player-season level, producing 784,260 unique player-season records.
+What this told me is that transfer-fee category carries more evidence of a link to long-term success than transfer type does — but on its own, neither explains most of what actually drives that success.
 
-Market valuations were aligned to player-seasons using the latest available valuation on or before the end of the relevant season.
+### EDA 6 — Scouting Intelligence & Player Value
 
-This produced market-value information for 553,640 player-seasons, while 230,620 player-seasons had no available market valuation.
+After filtering, my integrated player-value dataset held 261,158 player-season observations.
 
-The integrated player-value dataset was subsequently filtered for reliable performance and valuation information before developing the sporting-value and scouting framework.
+The sporting-value score came out to:
 
-Transfer information was separately integrated with player performance to evaluate transfer characteristics and their relationship with long-term recruitment outcomes.
+- Mean: 50.00
+  
+- Median: 49.88
+  
+- Minimum: 7.65
+  
+- Maximum: 90.73
 
+And market value:
 
-**Exploratory Data Analysis — EDA 1–7**
+- Mean: 1,721,902
+- 
+- Median: 350,000
+  
+- Minimum: 10,000
+  
+- Maximum: 200,000,000
 
-    
-EDA 1 — Data Preparation & Understanding
+The correlation between sporting-value score and raw market value was 0.195, rising to 0.340 against log market value.
 
-The four datasets operate at different observation levels and cover different time periods. Player performance contains multiple records for players within the same season because of competition and team participation.
+I built the Sporting Value Score from goals, assists, appearances, and minutes played, and deliberately kept disciplinary variables separate rather than letting cards drag down the overall score. I normalized each indicator first so that variables on different scales could contribute fairly, then weighted direct sporting contributions — goals and assists — more heavily, while appearances and minutes played captured involvement and consistency. I chose this balance to reward measurable on-pitch output without ignoring players who show up and contribute steadily over a season.
 
-After aggregation, 784,260 player-season records were identified. Market valuation was temporally aligned with these player-seasons, resulting in 553,640 player-seasons with available market valuations.
+From there, I classified players into performance and market-value bands and assigned scouting decisions:
 
-Insight: Careful player-season aggregation and temporal alignment were necessary before comparing sporting performance with financial valuation.
+| Classification | Count | Share |
+|---|---|---|
+| Monitor | 72,655 | 42.53% |
+| Retain | 47,998 | 28.10% |
+| Recruit | 39,592 | 23.18% |
+| Transfer Review | 10,571 | 6.19% |
 
-EDA 2 — Sporting Performance
+Sporting value and market valuation are clearly related, but not interchangeable — that modest correlation is exactly why I think a combined performance-financial framework makes more sense for scouting decisions than either measure alone.
 
-Player-season sporting performance was represented through appearances, goals, assists and minutes played.
+### EDA 7 — Transfer Fees & Sporting Performance
 
-The analysis identified substantial variation in sporting output, including exceptionally high goal-and-assist contributions. The highest combined goal-and-assist contribution observed was 102.
+Looking at transfer records linked with performance data, sporting performance varied noticeably by transfer type:
 
-Repeated high-performing player-seasons were also observed for some players across different seasons.
+| Transfer type | Mean sporting value |
+|---|---|
+| Draft | 44.27 |
+| Loan | 48.54 |
+| Return from loan | 49.01 |
+| Transfer | 48.61 |
 
-Insight: This told me goals alone were a poor proxy for contribution — I needed to combine several indicators to get a fair read on a player's value."
+Among paid transfers, higher fee bands lined up with progressively higher average sporting performance:
 
-EDA 3 — Sporting Performance vs Market Value
+| Fee band | Sporting value | Appearances | Goals | Assists |
+|---|---|---|---|---|
+| Low | 53.46 | 28.54 | 4.40 | 2.38 |
+| Moderate | 56.10 | 30.92 | 4.86 | 2.81 |
+| High | 58.34 | 33.19 | 5.44 | 3.11 |
+| Very High | 61.93 | 35.56 | 6.64 | 3.95 |
 
-High sporting output was associated with substantially different market valuations. Player-seasons with similarly high goal contributions could have markedly different market values.
+The statistical test came back at 0.2017, p < 0.001.
 
-Spearman rank correlation confirmed a statistically significant positive association between sporting contribution and market valuation:
+Higher-fee paid transfers are associated with stronger observed sporting performance — but I want to be careful not to read that as proof that paying more *causes* better performance.
 
-ρ = 0.304, p < 0.001
+## Statistical Analysis
 
-Insight: Higher sporting output tends to be associated with higher market valuation, but the relationship is not strong enough to conclude that sporting performance alone determines market value.
+I used statistical testing to check the relationships I'd already spotted during EDA, not to introduce new claims the data hadn't already suggested.
 
-This supports the project's Q1 approach of assessing sporting value relative to financial valuation, rather than simply ranking players by performance.
+**Sporting contribution vs. market valuation**
+Spearman ρ = 0.304, p < 0.001 — a statistically significant but only moderate-to-weak relationship.
 
-EDA 4 — Transfer Market Profile
+**Transfer characteristics vs. long-term recruitment success**
+The logistic regression model was significant overall (LLR p < 0.001). Transfer-fee groups showed significantly higher odds of success than the 0-fee group:
 
-The Transfer History dataset contains four transfer categories:
+| Fee group | Odds ratio |
+|---|---|
+| 1M or below | 2.95 |
+| 1M–5M | 3.18 |
+| 5M–10M | 3.20 |
+| 10M+ | 2.40 |
 
-Transfer: 844,401
-Loan: 128,079
-Return from loan: 127,665
-Draft: 1,172
+The model's pseudo-R² was 0.0115 — low enough that I read this as showing an association, not something close to full prediction. Transfer characteristics matter, but they're clearly not the whole story behind long-term success.
 
-Transfer fees were highly concentrated at zero, with 1,061,320 records having a transfer fee of zero.
+## Power BI Dashboards & Visualizations
 
-The dataset covers 62 seasons, from 00/01 through 25/26.
+I designed the dashboards to show only what the statistics actually support — not to introduce new claims the data can't back.
 
-Insight: A transfer record does not necessarily represent a paid transfer. Transfer type and transfer-fee status therefore need to be interpreted separately when assessing recruitment outcomes.
+**Dashboard 1 — Sporting Value & Market Value**
+Sporting-value distribution, market-value distribution, performance bands, market-value bands, sporting value versus market valuation, and identifying high sporting value relative to financial valuation.
 
-EDA 5 — Transfer Characteristics & Long-Term Recruitment Success
+**Dashboard 2 — Recruitment & Retention Intelligence**
+Recruit/Retain/Monitor/Transfer Review distribution, player-season scouting classifications, performance bands versus market-value bands, recruitment and retention targets, transfer-review players, and position/club-level scouting information where it's useful.
 
-Observed long-term success differed across transfer-fee groups.
+**Dashboard 3 — Transfer Market & Recruitment Success**
+Transfer-type distribution, transfer-fee distribution and bands, long-term recruitment success by fee category, the confirmed statistical associations, and sporting performance across transfer-fee bands.
 
-The long-term success proportions were:
+## Key Findings
 
-0 fee: 8.02%
+Four things stood out to me by the end of this project.
 
-1M or below: 21.29%
+Sporting performance and market valuation move together, but not tightly enough that I'd treat one as a stand-in for the other.
 
-1M–5M: 22.53%
+There are real, substantial gaps between a player's sporting value and their financial valuation — and that gap is exactly where recruitment opportunities tend to hide.
 
-5M–10M: 22.65%
+Transfer-fee category has a meaningful, statistically significant link to long-term recruitment success, with the strongest odds sitting in the 1–10M range.
 
-Above 10M: 18.03%
+But transfer characteristics alone don't explain much of what drives that success — the low pseudo-R² tells me other factors (player, team, competition, context) are doing a lot of the work I haven't captured here.
 
-Transfer type also showed different observed success proportions:
+## Stakeholder-Specific Recommendations
 
-Transfer: 9.01%
+**Sporting Director** — Use this combined sporting-value and market-value framework as a supporting tool for squad investment decisions, not a replacement for judgment. Players shouldn't be assessed on market valuation alone.
 
-Return from loan: 7.07%
+**Recruitment Department** — Prioritize players who show strong sporting value relative to their financial valuation, using the performance and market-value bands to structure scouting priorities. For transfer planning, pay attention to the higher observed long-term success in non-zero fee groups, especially 1–10M — but don't assume that paying more automatically buys a better outcome.
 
-Loan: 6.68%
+## Recruitment Decision Framework
 
-Draft: 5.63%
+- **Recruit** — potential targets with strong sporting evidence relative to valuation
+  
+- **Retain** — high-performing players who represent real sporting value
+  
+- **Monitor** — players who need more evaluation before a firm decision
+  
+- **Transfer Review** — players whose valuation looks high relative to their observed sporting output, and therefore worth a closer look
 
-Statistical analysis confirmed that transfer characteristics were associated with long-term recruitment success.
+## AFCON Relevance & Practical Application
 
-Compared with the 0-fee reference group, all non-zero fee groups had statistically significant associations with long-term success, with the 1–10M groups showing approximately three times the odds of success.
+I think this framework adapts well to a national-team scouting environment — combining objective player performance with financial and transfer-market information rather than leaning on reputation.
 
-For transfer type, conventional Transfer was statistically significant relative to Draft, while Loan and Return from loan were not statistically significant at the 0.05 level.
+For an AFCON-level context specifically, it could help identify players with strong sporting output who don't necessarily carry the highest market valuations — useful for resource-efficient scouting, where selection decisions should rest on measurable evidence rather than name recognition. I can also see it being adapted to compare players by position, competition, and recent form when building future national-team shortlists.
 
-Insight: Transfer-fee category provides stronger evidence of association with long-term success than transfer type in this analysis. However, transfer characteristics alone explain only a small proportion of the variation in recruitment success.
+## Limitations
 
-EDA 6 — Scouting Intelligence & Player Value
+- Market value isn't the same as actual transfer price, and can reflect things beyond sporting performance.
+  
+- The transfer-fee data is heavily skewed toward zero-fee records, which needs careful interpretation.
 
-The integrated player-value dataset contained 261,158 player-season observations after filtering.
+- Transfer characteristics showed a significant statistical link to long-term success, but the model only explains a small share of the outcome variation.
 
-The sporting-value score had:
+- This scouting framework is an analytical classification system — it isn't a substitute for professional scouting judgment, tactical evaluation, medical assessment, or contract considerations.
+  
+- The historical data spans different competitions and football environments, which can limit how directly players compare to one another.
 
-Mean: 50.00
+## Future Improvements
 
-Median: 49.88
+I'd like to build on this by adding:
 
-Minimum: 7.65
+- Age and career-stage analysis
+- 
+- Position-specific performance metrics
+- 
+- Competition-strength adjustment
+- 
+- More advanced scouting metrics
+- 
+- Injury and availability information
+- 
+- Contract status and remaining duration
+- 
+- Wage information
+- 
+- Team tactical context
+- 
+- Longitudinal player development
+- 
+- More advanced predictive modelling, once the statistical foundation is stronger
 
-Maximum: 90.73
+## Conclusion
 
-Market value had:
+Working through this project showed me how much performance, valuation, and transfer data need to be read together — none of them tell the full story on their own.
 
-Mean: 1,721,902
+Sporting performance and market valuation are positively linked, but not tightly enough that I'd treat financial valuation as a stand-in for sporting quality. The transfer analysis backs up a real, statistically significant link between transfer-fee category and long-term recruitment success, while also making clear that transfer characteristics by themselves only go so far in explaining it.
 
-Median: 350,000
-
-Minimum: 10,000
-
-Maximum: 200,000,000
-
-The correlation between sporting-value score and raw market value was 0.195, while the correlation with log market value was 0.340.
-
-Players were classified into performance and market-value bands and subsequently assigned scouting decisions.
-
-Among the actionable player-seasons:
-
-Monitor: 72,655 — 42.53%
-
-Retain: 47,998 — 28.10%
-
-Recruit: 39,592 — 23.18%
-
-Transfer Review: 10,571 — 6.19%
-
-The Sporting Value Score was constructed from key player-performance indicators including goals, assists, appearances, and minutes played, with disciplinary variables considered separately rather than allowing cards to dominate the overall score. The indicators were normalized before being combined so that variables measured on different scales could contribute comparably to the final score. Greater weight was given to direct sporting contributions such as goals and assists, while appearances and minutes played captured player involvement and consistency. This weighting was selected to balance measurable on-pitch output with sustained participation, providing a practical performance-based measure for comparing players across the scouting dataset.
-
-
-Insight: Sporting value and market valuation are related but not interchangeable. The relatively modest correlation supports the use of a combined performance-financial framework for scouting decisions.
-
-EDA 7 — Transfer Fees & Sporting Performance
-
-Among transfer records linked with performance data, player sporting performance varied across transfer types.
-
-Mean sporting-value scores were:
-
-Draft: 44.27
-
-Loan: 48.54
-
-Return from loan: 49.01
-
-Transfer: 48.61
-
-Among paid transfers, higher transfer-fee groups showed progressively higher average sporting performance:
-
-Fee Band	Sporting Value	Appearances	Goals	Assists
-
-Low	53.46	28.54	4.40	2.38
-
-Moderate	56.10	30.92	4.86	2.81
-
-High	58.34	33.19	5.44	3.11
-
-Very High	61.93	35.56	6.64	3.95
-
-The statistical test produced:
-
-statistic = 0.2017, p < 0.001
-
-Insight: Higher-fee paid transfers are associated with higher observed sporting performance. However, the association should not be interpreted as proof that paying a higher fee causes better sporting performance.
-
-
-**Statistical Analysis**
-
-The statistical analysis was used to test relationships identified during EDA rather than to generate unsupported new concepts.
-
-Key confirmed results include:
-
-Sporting contribution vs market valuation
-
-Spearman ρ = 0.304
-p < 0.001
-
-This confirms a statistically significant positive association, but only a moderate-to-weak relationship.
-
-Transfer characteristics vs long-term recruitment success
-
-The logistic regression model was statistically significant overall (LLR p < 0.001).
-
-Transfer-fee groups showed significantly higher odds of long-term success than the 0-fee reference group:
-
-1–1M: OR = 2.95
-
-1M–5M: OR = 3.18
-
-5M–10M: OR = 3.20
-
-10M+: OR = 2.40
-
-The model's pseudo-R² was 0.0115, indicating that transfer characteristics explain only a small proportion of the variation in long-term recruitment success.
-
-Therefore, the results demonstrate association rather than causation or complete prediction.
-
-**Power BI Dashboards & Visualizations**
-
-The Power BI component will communicate only the confirmed analytical results.
-
-Dashboard 1 — Sporting Value & Market Value
-
-Focus:
-
-Sporting-value distribution.
-
-Market-value distribution.
-
-Performance bands.
-
-Market-value bands.
-
-Sporting value versus market valuation.
-
-Identification of high sporting value relative to financial valuation.
-
-
-Dashboard 2 — Recruitment & Retention Intelligence
-
-Focus:
-
-Recruit, Retain, Monitor and Transfer Review distribution.
-
-Player-season scouting classifications.
-
-Performance bands versus market-value bands.
-
-Recruitment targets.
-
-Retention targets.
-
-Transfer-review players.
-
-Position and club-level scouting information where appropriate.
-
-
-Dashboard 3 — Transfer Market & Recruitment Success
-
-Focus:
-
-Transfer-type distribution.
-
-Transfer-fee distribution.
-
-Transfer-fee bands.
-
-Long-term recruitment success by fee category.
-
-Confirmed statistical associations.
-
-Sporting performance across transfer-fee bands.
-
-The dashboards are intended to visualize the confirmed findings, not to introduce additional analytical conclusions.
-
-**Key Findings & Insights**
-
-The project established four central conclusions.
-
-First, sporting performance and market valuation are positively associated, but the relationship is not strong enough to treat market value as a direct measure of sporting performance.
-
-Second, substantial differences exist between players' sporting value and their financial valuation. This creates an analytical basis for identifying potentially attractive recruitment opportunities.
-
-Third, transfer-fee category is significantly associated with long-term recruitment success. The strongest observed odds occurred in the 1–10M fee ranges relative to 0-fee transfers.
-
-Fourth, transfer characteristics alone are insufficient to explain recruitment success. The low pseudo-R² indicates that other player, team, competition and contextual factors are likely to contribute to long-term outcomes.
-
-**Stakeholder-Specific Recommendations**
-
-
-**Sporting Director**
-
-Use the integrated sporting-value and market-value framework as a supporting tool when evaluating squad investment decisions. Players should not be assessed solely according to their market valuation.
-
-**Recruitment Department**
-
-Prioritize players demonstrating strong sporting value relative to their financial valuation, while using market value and performance bands to structure scouting priorities.
-
-For transfer planning, give particular attention to the evidence showing higher observed long-term success among non-zero fee groups, especially the 1–10M ranges, while avoiding the assumption that higher fees automatically produce better outcomes.
-
-**Recruitment Decision Framework**
-
-Use the scouting classifications to prioritize attention:
-
-Recruit: potential recruitment targets with strong sporting evidence relative to valuation.
-Retain: high-performing players who represent important sporting value.
-Monitor: players requiring additional evaluation before a definitive decision.
-Transfer Review: players whose financial valuation is high relative to their observed sporting value and therefore warrant further review.
-
-**AFCON Relevance & Practical Application**
-
-The framework can be adapted to national-team scouting environments by combining objective player performance with financial and transfer-market information.
-
-For an AFCON-level scouting context, the framework could support identification of players who demonstrate strong sporting output without necessarily having the highest market valuations.
-
-This is particularly relevant for resource-efficient scouting, where recruitment and selection decisions should be supported by measurable sporting evidence rather than market reputation alone.
-
-The framework could also be adapted to compare players by position, competition and recent performance when developing future national-team scouting shortlists.
-
-**Limitations**
-
-The analysis has several limitations.
-
-Market value is not equivalent to actual transfer price and can reflect factors beyond sporting performance.
-
-The transfer-fee dataset contains a very large number of zero-fee records, requiring careful interpretation.
-
-Transfer characteristics showed statistically significant associations with long-term success, but the statistical model explained only a small proportion of outcome variation.
-
-The scouting decision framework is an analytical classification system and should not replace professional scouting assessment, tactical evaluation, medical assessment or contractual considerations.
-
-Historical player data also contain records from different competitions and football environments, which may limit direct comparisons between players.
-
-**Future Improvements / Next Steps**
-
-Future development could incorporate:
-
-Age and career-stage analysis.
-
-Position-specific performance metrics.
-
-Competition-strength adjustment.
-
-More advanced scouting metrics.
-
-Injury and availability information.
-
-Contract status and remaining contract duration.
-
-Wage information.
-
-Team tactical context.
-
-Longitudinal player development.
-
-More advanced predictive modelling after strengthening the statistical foundation.
-
-
-**Conclusion**
-
-This project demonstrates how player performance, market valuation and transfer history can be integrated into a practical scouting intelligence framework.
-
-The analysis confirms that sporting performance is positively associated with market valuation, but the relationship is not sufficiently strong to treat financial valuation as a direct proxy for sporting quality. The transfer analysis also shows statistically significant associations between transfer-fee categories and long-term recruitment success, while demonstrating that transfer characteristics alone provide limited explanatory power.
-
-The resulting framework therefore supports a more evidence-based approach to recruitment: evaluate sporting contribution, consider financial valuation, examine transfer context, and use the combined evidence to prioritize scouting decisions rather than relying on market value alone.
+What I take from this is a more evidence-based way to approach recruitment: look at sporting contribution, weigh it against financial valuation, factor in transfer context, and let that combined picture guide scouting priorities — rather than leaning on market value alone.
 
 Next, I want to bring team tactical context into this framework — looking at how a player's role, positioning, and output shift depending on the system and teammates around him, rather than judging performance in isolation. That would sharpen the sporting-value score and give recruitment teams a much fairer read on whether a player's numbers are a product of the player or the system.
 
 Mwanahamisi Juma
 
-Football Performance Analyst
+
+Football Data Analyst
+
 
 +255787338398
+
 
 Mwanahamis050@gmail.com
