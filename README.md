@@ -1,4 +1,4 @@
-# Scouting-Intelligence-And-Recruitment-Analytics: Identifying High-Value Transfer Opportunities Through Performance and Market Analysis
+# Football Scouting Analytics: Finding Undervalued Players Through Performance and Transfer Data
 
 A data-driven football scouting project integrating player performance, market valuation, and transfer history to identify high-value recruitment opportunities and support evidence-based decisions on player recruitment, retention, monitoring, and transfer review.
 
@@ -16,13 +16,7 @@ Overall, the project demonstrates how performance data, market valuation, and tr
 
 **Impact of the Project**
 
-The project demonstrates how football data can be transformed from large, fragmented datasets into actionable scouting intelligence.
-
-The framework supports three practical areas:
-
-Identification of players with strong sporting value relative to market valuation.
-Evaluation of transfer characteristics associated with long-term recruitment success.
-Classification of player-seasons into scouting decisions such as Recruit, Retain, Monitor and Transfer Review.
+This project turns four fragmented, multi-million-row datasets — player profiles, performance records, market valuations, and transfer history — into a single decision tool a recruitment department could actually use. Instead of ranking players on raw stats or reputation alone, the framework flags exactly where sporting output and market value disagree, and translates that gap into a clear call: Recruit, Retain, Monitor, or Transfer Review
 
 **What I Have Contributed to This Project**
 
@@ -75,32 +69,13 @@ The datasets from kaggle  provide complementary information covering player iden
 
 **Tools & Technologies**
 
-Python — Beginner to Intermediate
+Python — data cleaning, integration across four datasets, player-season aggregation, feature engineering for the sporting-value score, exploratory data analysis, and statistical testing (Spearman correlation, logistic regression).
 
-Used for:
+Power BI — interactive dashboards for sporting value vs. market value, recruitment/retention classifications, and transfer-market patterns, built for a sporting director and recruitment department audience
 
-Data cleaning
 
-Data transformation
+**Data Preparation & Cleaning**
 
-Data integration
-
-Feature engineering
-
-Exploratory data analysis
-
-Statistical analysis
-
-Power BI
-
-Used for:
-
-Interactive visualization
-Scouting intelligence dashboards
-Player segmentation
-Communication of confirmed findings
-Stakeholder-oriented decision support
-9. Data Preparation & Cleaning
 Player Profiles
 
 The original Player Profiles dataset contained 92,671 rows and 34 columns.
