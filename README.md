@@ -83,14 +83,23 @@ The original Player Profiles dataset contained 92,671 rows and 34 columns.
 Data preparation included:
 
 Data-type assessment and correction.
+
 Conversion of date fields such as date of birth and joining information.
+
 Missing-value assessment.
+
 Position standardization.
+
 Creation of position_group.
+
 Foot standardization.
+
 Citizenship assessment.
+
 Current-club status classification.
+
 Assessment of contract-related fields.
+
 Removal of agreed non-essential columns.
 
 The final cleaned Player Profiles dataset contained 92,671 rows and 20 columns.
@@ -102,12 +111,19 @@ The original Player Performance dataset contained 1,878,719 rows and 20 columns.
 Data preparation included:
 
 Duplicate assessment.
+
 Missing-value investigation.
+
 Standardization of season names to YY/YY.
+
 Assessment of competition and team-level records.
+
 Removal of non-required columns.
+
 Retention of relevant performance and disciplinary variables.
+
 Treatment of missing goals and minutes_played.
+
 Correction of invalid goals_conceded = -1 values to NaN.
 
 The final cleaned Player Performance dataset contained 1,878,719 rows and 16 columns.
@@ -198,16 +214,23 @@ Observed long-term success differed across transfer-fee groups.
 The long-term success proportions were:
 
 0 fee: 8.02%
+
 1M or below: 21.29%
+
 1M–5M: 22.53%
+
 5M–10M: 22.65%
+
 Above 10M: 18.03%
 
 Transfer type also showed different observed success proportions:
 
 Transfer: 9.01%
+
 Return from loan: 7.07%
+
 Loan: 6.68%
+
 Draft: 5.63%
 
 Statistical analysis confirmed that transfer characteristics were associated with long-term recruitment success.
@@ -225,15 +248,21 @@ The integrated player-value dataset contained 261,158 player-season observations
 The sporting-value score had:
 
 Mean: 50.00
+
 Median: 49.88
+
 Minimum: 7.65
+
 Maximum: 90.73
 
 Market value had:
 
 Mean: 1,721,902
+
 Median: 350,000
+
 Minimum: 10,000
+
 Maximum: 200,000,000
 
 The correlation between sporting-value score and raw market value was 0.195, while the correlation with log market value was 0.340.
@@ -243,8 +272,11 @@ Players were classified into performance and market-value bands and subsequently
 Among the actionable player-seasons:
 
 Monitor: 72,655 — 42.53%
+
 Retain: 47,998 — 28.10%
+
 Recruit: 39,592 — 23.18%
+
 Transfer Review: 10,571 — 6.19%
 
 The Sporting Value Score was constructed from key player-performance indicators including goals, assists, appearances, and minutes played, with disciplinary variables considered separately rather than allowing cards to dominate the overall score. The indicators were normalized before being combined so that variables measured on different scales could contribute comparably to the final score. Greater weight was given to direct sporting contributions such as goals and assists, while appearances and minutes played captured player involvement and consistency. This weighting was selected to balance measurable on-pitch output with sustained participation, providing a practical performance-based measure for comparing players across the scouting dataset.
@@ -259,16 +291,23 @@ Among transfer records linked with performance data, player sporting performance
 Mean sporting-value scores were:
 
 Draft: 44.27
+
 Loan: 48.54
+
 Return from loan: 49.01
+
 Transfer: 48.61
 
 Among paid transfers, higher transfer-fee groups showed progressively higher average sporting performance:
 
 Fee Band	Sporting Value	Appearances	Goals	Assists
+
 Low	53.46	28.54	4.40	2.38
+
 Moderate	56.10	30.92	4.86	2.81
+
 High	58.34	33.19	5.44	3.11
+
 Very High	61.93	35.56	6.64	3.95
 
 The statistical test produced:
@@ -298,8 +337,11 @@ The logistic regression model was statistically significant overall (LLR p < 0.0
 Transfer-fee groups showed significantly higher odds of long-term success than the 0-fee reference group:
 
 1–1M: OR = 2.95
+
 1M–5M: OR = 3.18
+
 5M–10M: OR = 3.20
+
 10M+: OR = 2.40
 
 The model's pseudo-R² was 0.0115, indicating that transfer characteristics explain only a small proportion of the variation in long-term recruitment success.
@@ -315,10 +357,15 @@ Dashboard 1 — Sporting Value & Market Value
 Focus:
 
 Sporting-value distribution.
+
 Market-value distribution.
+
 Performance bands.
+
 Market-value bands.
+
 Sporting value versus market valuation.
+
 Identification of high sporting value relative to financial valuation.
 
 
@@ -327,11 +374,17 @@ Dashboard 2 — Recruitment & Retention Intelligence
 Focus:
 
 Recruit, Retain, Monitor and Transfer Review distribution.
+
 Player-season scouting classifications.
+
 Performance bands versus market-value bands.
+
 Recruitment targets.
+
 Retention targets.
+
 Transfer-review players.
+
 Position and club-level scouting information where appropriate.
 
 
@@ -340,10 +393,15 @@ Dashboard 3 — Transfer Market & Recruitment Success
 Focus:
 
 Transfer-type distribution.
+
 Transfer-fee distribution.
+
 Transfer-fee bands.
+
 Long-term recruitment success by fee category.
+
 Confirmed statistical associations.
+
 Sporting performance across transfer-fee bands.
 
 The dashboards are intended to visualize the confirmed findings, not to introduce additional analytical conclusions.
